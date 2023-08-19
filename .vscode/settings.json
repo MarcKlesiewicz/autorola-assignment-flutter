@@ -1,0 +1,19 @@
+{
+  "i18n-ally.localesPaths": "assets/i18n",
+  "i18n-ally.sourceLanguage": "da",
+  "i18n-ally.displayLanguage": "da",
+  "i18n-ally.keystyle": "nested",
+  "dart.flutterSdkPath": ".fvm/flutter_sdk",
+  // Remove .fvm files from search
+  "search.exclude": {
+    "**/.fvm": true
+  },
+  // Remove from file watching
+  "files.watcherExclude": {
+    "**/.fvm": true
+  },
+  "files.exclude": {
+    "**/*.g.dart": true,
+    "**/*.freezed.dart": true
+  }
+}

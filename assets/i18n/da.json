@@ -1,0 +1,26 @@
+{
+  "brand": "Template",
+  "demo_page": {
+    "title": "Demo side titel",
+    "content": "hej verden"
+  },
+  "validators": {
+    "required": "Feltet er påkrævet",
+    "email": "Feltet skal være en gyldig email",
+    "min_length": "Du skal have mindst {length}",
+    "min_string_length": "Mindst {length} tegn",
+    "max_string_length": "Max {length} tegn",
+    "length": "Feltet kræver præcist {length} tegn",
+    "is_integer_string": "Værdien skal være et heltal",
+    "is_double_string": "Værdien skal være et tal",
+    "isEqualTo": "Felterne skal være ens",
+    "password_must_match": "Password er ikke ens",
+    "invalid_zipCode": "Ugyldigt postnummer"
+  },
+  "api": {
+    "errors": {
+      "unknown": "Hov, noget gik galt, prøv igen eller kontakt support"
+    }
+  },
+  "licence": "Licens"
+}

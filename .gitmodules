@@ -1,0 +1,3 @@
+[submodule "flutter_submodules"]
+	path = packages/flutter_submodules
+	url = git@github.com:littlegiants/flutter_submodules.git

@@ -1,0 +1,26 @@
+{
+  "brand": "Template",
+  "demo_page": {
+    "title": "Demo page title",
+    "content": "hello world"
+  },
+  "validators": {
+    "required": "This field is required",
+    "email": "This is not a valid email address",
+    "min_length": "You must have at least {length}",
+    "maxLength": "You must have at most {length}",
+    "length": "The field must be exactly {length} characters",
+    "is_integer_string": "The value must be an integer",
+    "is_double_string": "The value must be a number",
+    "min_string_length": "At least {length} characters",
+    "isEqualTo": "The fields must be the same",
+    "password_must_match": "Password is not the same",
+    "invalid_zipCode": "Invalid zipcode"
+  },
+  "api": {
+    "errors": {
+      "unknown": "Opps, something went wrong, try again or contact support."
+    }
+  },
+  "licence": "Licence"
+}

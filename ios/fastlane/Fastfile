@@ -1,0 +1,31 @@
+default_platform(:ios)
+
+platform :ios do
+  desc "Deploy TestFlight"
+  lane :release do
+    
+    setup_ci  
+
+    puts ENV["APP_STORE_API_KEY_ID"]
+    puts ENV["APP_STORE_API_KEY_ID"] == nil
+    puts ENV["APP_STORE_API_ISSUER_ID"]
+    puts ENV["APP_STORE_API_ISSUER_ID"] == nil
+
+    api_key = app_store_connect_api_key(
+      key_id: ENV["APP_STORE_API_KEY_ID"],
+      issuer_id: ENV["APP_STORE_API_ISSUER_ID"],
+      key_filepath: "./AuthKey.p8",
+      is_key_content_base64: true,
+      in_house: false
+    )
+
+    match(
+      git_basic_authorization: Base64.strict_encode64("notholst:" + ENV['GITHUB_ACCESS_TOKEN']),
+      type: "appstore"
+    )
+
+    build_app(workspace: "Runner.xcworkspace", scheme: "Runner",  )
+    upload_to_testflight()
+
+  end
+end

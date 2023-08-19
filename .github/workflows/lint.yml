@@ -1,0 +1,22 @@
+name: Lint
+
+on:
+  push:
+
+jobs:
+  lint:
+    require_trailing_commas: true
+    runs-on: ubuntu-latest
+    environment: build
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          submodules: "recursive"
+          token: ${{ secrets.GH_PAT }}
+      - uses: kuhnroyal/flutter-fvm-config-action@v1
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: ${{ env.FLUTTER_VERSION }}
+          channel: ${{ env.FLUTTER_CHANNEL }}
+      - run: flutter pub get
+      - run: flutter analyze

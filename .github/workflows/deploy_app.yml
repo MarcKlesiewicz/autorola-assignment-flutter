@@ -1,0 +1,116 @@
+name: Deploy to App Store and Google Play
+
+on:
+  push:
+    branches:
+      - release
+
+jobs:
+  deploy_android:
+    environment: release
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Setup JDK
+        uses: actions/setup-java@v2
+        with:
+          distribution: "zulu"
+          java-version: 11
+
+      - uses: kuhnroyal/flutter-fvm-config-action@v1
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: ${{ env.FLUTTER_VERSION }}
+          channel: ${{ env.FLUTTER_CHANNEL }}
+
+      - run: flutter pub get
+
+      - run: flutter analyze
+
+      - name: Save keystore to file
+        env:
+          ANDROID_KEYSTORE: ${{ secrets.ANDROID_KEYSTORE }}
+        run: echo $ANDROID_KEYSTORE | base64 -di > android/app/keystore.jks
+
+      - name: Save service-account to file
+        env:
+          GOOGLE_PLAY_JSON: ${{ secrets.GOOGLE_PLAY_JSON }}
+        run: echo $GOOGLE_PLAY_JSON > android/google_play_service_account.json
+
+      - name: Generate key.properties
+        working-directory: android
+        run: |
+          echo storePassword=$KEY_STORE_PASSWORD >> key.properties
+          echo keyPassword=$KEY_PASSWORD >> key.properties
+          echo keyAlias=$ALIAS >> key.properties
+          echo storeFile=$KEY_PATH >> key.properties
+        env:
+          KEY_STORE_PASSWORD: ${{ secrets.KEY_STORE_PASSWORD }}
+          KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
+          ALIAS: ${{ secrets.ALIAS }}
+          KEY_PATH: keystore.jks
+
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "2.7.2"
+      #- run: sh generate-production.sh
+      - run: flutter build apk --release --build-number=$(($BUILD_NUMBER)) --no-shrink
+        env:
+          BUILD_NUMBER: ${{github.run_number}}
+
+      - name: Upload APK release to artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: app-release.apk
+          path: build/app/outputs/flutter-apk/app-release.apk
+      - run: flutter build appbundle --release --build-number=$(($BUILD_NUMBER)) --no-shrink
+        env:
+          BUILD_NUMBER: ${{github.run_number}}
+
+      - uses: maierj/fastlane-action@v2.0.1
+        with:
+          subdirectory: android
+          lane: "deploy_internal"
+
+  deploy_ios:
+    environment: release
+    runs-on: macos-latest #[self-hosted, macOS]
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: set version build number
+        run: agvtool new-version -all $GITHUB_RUN_NUMBER
+        working-directory: ios
+
+      - name: Setup App Store Connect Api Key
+        run: echo $APP_STORE_API_KEY >> ios/AuthKey.p8
+        env:
+          APP_STORE_API_KEY: ${{ secrets.APP_STORE_API_KEY }}
+
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 2.6 # Not needed with a .ruby-version file
+          bundler-cache: true # runs 'bundle install' and caches installed gems automatically
+
+      - uses: kuhnroyal/flutter-fvm-config-action@v1
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: ${{ env.FLUTTER_VERSION }}
+          channel: ${{ env.FLUTTER_CHANNEL }}
+
+      - run: flutter pub get
+      #- run: sh generate-production.sh
+      - run: flutter build ios --release --no-codesign --build-number=$(($BUILD_NUMBER))
+        env:
+          BUILD_NUMBER: ${{github.run_number}}
+
+      - uses: maierj/fastlane-action@v2.0.1
+        with:
+          subdirectory: ios
+          lane: "release"
+        env:
+          APP_STORE_API_ISSUER_ID: ${{ secrets.APP_STORE_API_ISSUER_ID }}
+          APP_STORE_API_KEY_ID: ${{ secrets.APP_STORE_API_KEY_ID }}
+          GITHUB_ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
