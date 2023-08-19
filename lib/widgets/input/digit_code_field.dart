@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:template/utils/utils.dart';
+import 'package:autorola_assignment/utils/utils.dart';
 
 import '../../theme/theme_definition.dart';
 

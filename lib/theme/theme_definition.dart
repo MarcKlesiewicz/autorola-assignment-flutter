@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:template/theme/color_extension.dart';
+import 'package:autorola_assignment/theme/color_extension.dart';
 
 ThemeData defaultTheme() => ThemeData(
       colorScheme: ColorScheme(

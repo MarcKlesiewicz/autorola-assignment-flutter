@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:template/utils/list_extensions.dart';
-import 'package:template/utils/utils.dart';
+import 'package:autorola_assignment/utils/list_extensions.dart';
+import 'package:autorola_assignment/utils/utils.dart';
 
 class AsyncElevatedButton extends StatefulWidget {
   final FutureOr<void> Function()? onPressed;

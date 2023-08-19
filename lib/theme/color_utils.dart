@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:template/theme/theme_definition.dart';
+import 'package:autorola_assignment/theme/theme_definition.dart';
 
 enum ColorTheme {
   primary,

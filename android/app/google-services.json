@@ -9,7 +9,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:732870131391:android:9c21b010522141143c100a",
         "android_client_info": {
-          "package_name": "com.example.template"
+          "package_name": "com.example.autorola-assignment"
         }
       },
       "oauth_client": [
@@ -34,7 +34,7 @@
               "client_id": "732870131391-qtohgaubl31u7o5ba0ntni7pr8ast6ev.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "com.example.template"
+                "bundle_id": "com.example.autorola-assignment"
               }
             }
           ]

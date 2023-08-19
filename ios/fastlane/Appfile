@@ -1,4 +1,4 @@
-app_identifier("com.example.template") # The bundle identifier of your app
+app_identifier("com.example.autorola-assignment") # The bundle identifier of your app
 apple_id("udvikling@littlegiants.dk") # Your Apple email address
 
 

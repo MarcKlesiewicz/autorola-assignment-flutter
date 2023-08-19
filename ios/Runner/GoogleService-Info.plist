@@ -13,7 +13,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.example.template</string>
+	<string>com.example.autorola-assignment</string>
 	<key>PROJECT_ID</key>
 	<string>flutter-template-75c5f</string>
 	<key>STORAGE_BUCKET</key>

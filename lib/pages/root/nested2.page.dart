@@ -1,6 +1,6 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:autorola_assignment/widgets/text/styled_text.dart';
 import 'package:flutter/material.dart';
-import 'package:template/widgets/text/styled_text.dart';
 
 @RoutePage()
 class NestedPage2 extends StatelessWidget {

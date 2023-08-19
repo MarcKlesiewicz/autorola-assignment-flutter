@@ -1,9 +1,9 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:autorola_assignment/router/router.gr.dart';
+import 'package:autorola_assignment/theme/theme_definition.dart';
+import 'package:autorola_assignment/widgets/text/styled_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_translate/flutter_translate.dart';
-import 'package:template/router/router.gr.dart';
-import 'package:template/theme/theme_definition.dart';
-import 'package:template/widgets/text/styled_text.dart';
 
 // Autorouter -> Remove this file
 @RoutePage()

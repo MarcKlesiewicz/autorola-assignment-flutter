@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_translate/flutter_translate.dart';
-import 'package:template/providers/router.provider.dart';
-import 'package:template/theme/theme_definition.dart';
+import 'package:autorola_assignment/providers/router.provider.dart';
+import 'package:autorola_assignment/theme/theme_definition.dart';
+
+import 'providers/router.provider.dart';
 
 class App extends StatelessWidget {
   const App({Key? key}) : super(key: key);

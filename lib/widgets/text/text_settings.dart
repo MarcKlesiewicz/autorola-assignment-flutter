@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:template/widgets/text/auto_size_settings.dart';
+import 'package:autorola_assignment/widgets/text/auto_size_settings.dart';
 
 part 'text_settings.freezed.dart';
 

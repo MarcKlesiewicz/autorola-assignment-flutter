@@ -5,8 +5,8 @@
 // import 'package:flutter/foundation.dart';
 // import 'package:flutter/material.dart';
 // import 'package:flutter_translate/flutter_translate.dart';
-// import 'package:template/models/error_type_model.dart';
-// import 'package:template/widgets/dialogs/show_default_dialog.dart';
+// import 'package:autorola_assignment/models/error_type_model.dart';
+// import 'package:autorola_assignment/widgets/dialogs/show_default_dialog.dart';
 
 // Future<T?> handleDioException<T>(
 //   BuildContext context,

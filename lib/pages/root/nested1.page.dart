@@ -1,10 +1,10 @@
 import 'package:auto_route/annotations.dart';
+import 'package:autorola_assignment/utils/app_licence.dart';
+import 'package:autorola_assignment/utils/utils.dart';
+import 'package:autorola_assignment/widgets/buttons/danger_buttons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_translate/flutter_translate.dart';
-import 'package:template/utils/app_licence.dart';
-import 'package:template/utils/utils.dart';
-import 'package:template/widgets/buttons/danger_buttons.dart';
 
 @RoutePage()
 class NestedPage1 extends StatelessWidget {

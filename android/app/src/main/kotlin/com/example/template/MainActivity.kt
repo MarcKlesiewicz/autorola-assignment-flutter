@@ -1,4 +1,4 @@
-package com.example.template
+package com.example.autorola-assignment
 
 import io.flutter.embedding.android.FlutterActivity
 

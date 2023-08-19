@@ -5,7 +5,7 @@ storage_mode("git")
 
 type("development") # The default type, can be: appstore, adhoc, enterprise or development
 
-app_identifier(["com.example.template"]) # TODO: UPDATE THIS
+app_identifier(["com.example.autorola-assignment"]) # TODO: UPDATE THIS
 username("udvikling@littlegiants.dk") # Your Apple Developer Portal username
 team_id("JL4RY858R9") # TODO: UPDATE THIS
 

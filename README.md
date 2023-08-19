@@ -26,7 +26,7 @@ Includes:
 
 ### Package stuff
 
-- project is called 'template', so rename alle imports with 'package:template' -> 'package:<your package name>'.
+- project is called 'template', so rename alle imports with 'package:autorola_assignment' -> 'package:<your package name>'.
   - pubspec.yaml -> name
   - build.gradle -> applicationId
   - AndroidManifest files -> package

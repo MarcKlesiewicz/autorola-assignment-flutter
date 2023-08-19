@@ -9,11 +9,11 @@
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:auto_route/auto_route.dart' as _i6;
-import 'package:template/pages/flutter_splash_screen.dart' as _i1;
-import 'package:template/pages/root.page.dart' as _i5;
-import 'package:template/pages/root/nested1.page.dart' as _i2;
-import 'package:template/pages/root/nested2.page.dart' as _i3;
-import 'package:template/pages/root/nested3.page.dart' as _i4;
+import 'package:autorola_assignment/pages/flutter_splash_screen.dart' as _i1;
+import 'package:autorola_assignment/pages/root.page.dart' as _i5;
+import 'package:autorola_assignment/pages/root/nested1.page.dart' as _i2;
+import 'package:autorola_assignment/pages/root/nested2.page.dart' as _i3;
+import 'package:autorola_assignment/pages/root/nested3.page.dart' as _i4;
 
 abstract class $AppRouter extends _i6.RootStackRouter {
   $AppRouter({super.navigatorKey});

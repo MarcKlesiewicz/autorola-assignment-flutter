@@ -1,6 +1,6 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
-import 'package:template/theme/color_utils.dart';
+import 'package:autorola_assignment/theme/color_utils.dart';
 
 import 'text_settings.dart';
 

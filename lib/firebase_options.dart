@@ -69,7 +69,8 @@ class DefaultFirebaseOptions {
     messagingSenderId: '732870131391',
     projectId: 'flutter-template-75c5f',
     storageBucket: 'flutter-template-75c5f.appspot.com',
-    iosClientId: '732870131391-qtohgaubl31u7o5ba0ntni7pr8ast6ev.apps.googleusercontent.com',
-    iosBundleId: 'com.example.template',
+    iosClientId:
+        '732870131391-qtohgaubl31u7o5ba0ntni7pr8ast6ev.apps.googleusercontent.com',
+    iosBundleId: 'com.example.autorola-assignment',
   );
 }

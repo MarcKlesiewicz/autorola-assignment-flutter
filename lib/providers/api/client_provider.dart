@@ -7,8 +7,8 @@
 // import 'package:flutter_riverpod/flutter_riverpod.dart';
 // import 'package:synchronized/synchronized.dart' as synchronized;
 // import 'package:internet_connection_checker_plus/internet_connection_checker_plus.dart';
-// import 'package:template/providers/auth/api_endpoint_provider.dart';
-// import 'package:template/providers/auth/auth_provider.dart';
+// import 'package:autorola_assignment/providers/auth/api_endpoint_provider.dart';
+// import 'package:autorola_assignment/providers/auth/auth_provider.dart';
 
 // final synchronized.Lock lock = synchronized.Lock();
 
