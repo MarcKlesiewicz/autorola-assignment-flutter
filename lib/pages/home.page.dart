@@ -1,5 +1,7 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:autorola_assignment/utils/utils.dart';
 import 'package:autorola_assignment/widgets/common/default_scaffold.dart';
+import 'package:autorola_assignment/widgets/home/home_auction_section.dart';
 import 'package:autorola_assignment/widgets/home/quick_search_filter.dart';
 import 'package:flutter/material.dart';
 
@@ -12,6 +14,8 @@ class HomePage extends StatelessWidget {
     return const DefaultScaffold(
       body: Column(children: [
         QuickSearchFilter(),
+        Gaps.lgV,
+        HomeAuctionSection(),
       ]),
     );
   }

@@ -22,6 +22,7 @@ class DefaultScaffold extends StatelessWidget {
                     constraints: BoxConstraints(
                         minHeight: MediaQuery.of(context).size.height),
                     child: body),
+                Gaps.lgV,
                 const _Footer(),
               ],
             ),
@@ -95,8 +96,8 @@ class _Footer extends StatelessWidget {
             const VerticalDivider(
               color: Colors.black,
             ),
-            TextButton(onPressed: () {}, child: const Text('data')),
-            TextButton(onPressed: () {}, child: const Text('data')),
+            TextButton(onPressed: () {}, child: const Text('Datenschutz ')),
+            TextButton(onPressed: () {}, child: const Text('Impressum')),
           ],
         ),
         Container(
