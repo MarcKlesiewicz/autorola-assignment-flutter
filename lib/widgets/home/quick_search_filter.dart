@@ -1,4 +1,9 @@
+import 'package:autorola_assignment/models/articlesmodel.dart';
+import 'package:autorola_assignment/providers/auctions_provider.dart';
+import 'package:autorola_assignment/providers/countries_provider.dart';
+import 'package:autorola_assignment/providers/fueltype_provider.dart';
 import 'package:autorola_assignment/providers/make_provider.dart';
+import 'package:autorola_assignment/utils/country.dart';
 import 'package:autorola_assignment/utils/list_extensions.dart';
 import 'package:autorola_assignment/utils/utils.dart';
 import 'package:autorola_assignment/widgets/text/styled_text.dart';
@@ -17,11 +22,14 @@ class _QuickSearchFilterState extends ConsumerState<QuickSearchFilter> {
   List<String> selectedMakes = [];
   List<String> selectedFueltypes = [];
   List<String> selectedCountries = [];
+  List<ArticlesModel> filteredArticels = [];
+
   @override
   Widget build(BuildContext context) {
     final asyncMakes = ref.watch(makesNotifierProvider);
-    final asyncFueltypes = ref.watch(makesNotifierProvider);
-    final asyncCountries = ref.watch(makesNotifierProvider);
+    final asyncFueltypes = ref.watch(fueltypeNotifierProvider);
+    final asyncCountries = ref.watch(countriesNotifierProvider);
+    final asyncArticels = ref.watch(auctionsNotifierProvider);
 
     const inputDecoration = InputDecoration(
       filled: true,
@@ -30,80 +38,142 @@ class _QuickSearchFilterState extends ConsumerState<QuickSearchFilter> {
         borderRadius: BorderRadiuses.r02,
       ),
     );
-    return Stack(
-      children: [
-        Image.asset(
-          'assets/images/home-bg.jpg',
-          height: 200,
-          fit: BoxFit.cover,
-          width: MediaQuery.of(context).size.width,
-        ),
-        Align(
-          alignment: Alignment.center,
-          child: ConstrainedBox(
-            constraints: const BoxConstraints(maxWidth: 992),
-            child: Column(
-              children: [
-                const HeadlineMedium.onPrimary(
-                    'Used vechiles that fit your dealership'),
-                Row(
-                  children: [
-                    Expanded(
-                      child: DropDownMultiSelect(
-                          onChanged: (List<String> x) {
-                            setState(() {
-                              selectedMakes = x;
-                            });
-                          },
-                          options: asyncMakes.value!,
-                          selectedValues: selectedMakes,
-                          whenEmpty: 'Any make',
-                          decoration: inputDecoration),
-                    ),
-                    Expanded(
-                      child: DropDownMultiSelect(
-                        onChanged: (List<String> x) {
-                          setState(() {
-                            selectedFueltypes = x;
-                          });
-                        },
-                        options: asyncFueltypes.value!,
-                        selectedValues: selectedFueltypes,
-                        whenEmpty: 'Any fueltype',
-                        decoration: inputDecoration,
+    return asyncArticels.maybeWhen(
+      data: (data) {
+        return SizedBox(
+          height: 250,
+          child: Stack(
+            children: [
+              Image.asset(
+                'assets/images/home-bg.jpg',
+                fit: BoxFit.cover,
+                width: MediaQuery.of(context).size.width,
+              ),
+              Align(
+                alignment: Alignment.center,
+                child: ConstrainedBox(
+                  constraints: const BoxConstraints(maxWidth: 992),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      const HeadlineMedium.onPrimary(
+                          'Used vechiles that fit your dealership'),
+                      Row(
+                        children: [
+                          Expanded(
+                            child: DropDownMultiSelect(
+                                onChanged: (List<String> makes) {
+                                  setState(() {
+                                    selectedMakes = makes;
+                                  });
+                                  _onFilterChanged(data!);
+                                },
+                                options: asyncMakes.value!,
+                                selectedValues: selectedMakes,
+                                whenEmpty: 'Any make',
+                                decoration: inputDecoration),
+                          ),
+                          Expanded(
+                            child: DropDownMultiSelect(
+                              onChanged: (List<String> fuelTypes) {
+                                setState(() {
+                                  selectedFueltypes = fuelTypes;
+                                });
+                                _onFilterChanged(data!);
+                              },
+                              options: asyncFueltypes.value!,
+                              selectedValues: selectedFueltypes,
+                              whenEmpty: 'Any fueltype',
+                              decoration: inputDecoration,
+                            ),
+                          ),
+                          Expanded(
+                            child: DropDownMultiSelect(
+                              onChanged: (List<String> countries) {
+                                setState(() {
+                                  selectedCountries = countries;
+                                });
+                                _onFilterChanged(data!);
+                              },
+                              options: asyncCountries.value!,
+                              selectedValues: selectedCountries,
+                              whenEmpty: 'Any countries',
+                              decoration: inputDecoration,
+                            ),
+                          ),
+                        ].gap(Gaps.mdH),
                       ),
-                    ),
-                    Expanded(
-                      child: DropDownMultiSelect(
-                        onChanged: (List<String> x) {
-                          setState(() {
-                            selectedCountries = x;
-                          });
-                        },
-                        options: asyncCountries.value!,
-                        selectedValues: selectedCountries,
-                        whenEmpty: 'Any countries',
-                        decoration: inputDecoration,
+                      Directionality(
+                        textDirection: TextDirection.rtl,
+                        child: ElevatedButton.icon(
+                          onPressed: () {},
+                          icon: const Icon(Icons.drive_eta),
+                          label: TitleLarge.onPrimary(
+                              'Show ${_getSubmitButtonText(data!.length.toString())}'),
+                          style: const ButtonStyle(
+                              backgroundColor:
+                                  MaterialStatePropertyAll(Colors.lightBlue)),
+                        ),
                       ),
-                    ),
-                  ].gap(Gaps.mdH),
-                ),
-                Directionality(
-                  textDirection: TextDirection.rtl,
-                  child: ElevatedButton.icon(
-                    onPressed: () {},
-                    icon: const Icon(Icons.drive_eta),
-                    label: const TitleLarge.onPrimary('hello'),
-                    style: const ButtonStyle(
-                        backgroundColor:
-                            MaterialStatePropertyAll(Colors.lightBlue)),
+                    ],
                   ),
                 ),
-              ].gap(Gaps.mdV),
-            ),
+              )
+            ],
           ),
-        )
-      ],
+        );
+      },
+      orElse: () {
+        return const SizedBox();
+      },
     );
+  }
+
+  String _getSubmitButtonText(String total) {
+    if (selectedMakes.isNotEmpty ||
+        selectedCountries.isNotEmpty ||
+        selectedFueltypes.isNotEmpty) {
+      return filteredArticels.length.toString();
+    } else {
+      return total;
+    }
+  }
+
+  _onFilterChanged(List<ArticlesModel> articles) {
+    filteredArticels.clear();
+    if (selectedMakes.isNotEmpty) {
+      for (var make in selectedMakes) {
+        for (var article in articles) {
+          if (article.headline.toLowerCase().contains(make.toLowerCase())) {
+            if (!filteredArticels.contains(article)) {
+              filteredArticels.add(article);
+            }
+          }
+        }
+      }
+    }
+    if (selectedFueltypes.isNotEmpty) {
+      for (var fuel in selectedFueltypes) {
+        for (var article in articles) {
+          if (article.details.toLowerCase().contains(fuel.toLowerCase())) {
+            if (!filteredArticels.contains(article)) {
+              filteredArticels.add(article);
+            }
+          }
+        }
+      }
+    }
+    if (selectedCountries.isNotEmpty) {
+      for (var country in selectedCountries) {
+        for (var article in articles) {
+          if (article.countryCode.contains(getCountryCode(country))) {
+            if (!filteredArticels.contains(article)) {
+              filteredArticels.add(article);
+            }
+          }
+        }
+      }
+    }
+    setState(() {});
   }
 }
