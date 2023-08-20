@@ -1,0 +1,109 @@
+{
+    "logoUrl": "https://g.autorola.com/g/da_DK/misc/logo_autorola_24h.gif",
+    "title": "Alphabet Long Term Rental",
+    "count": 8,
+    "articles": [
+        {
+            "enrollId": 123452,
+            "headline": "1998 BMW 3 series",
+            "pictureUrl": "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80",
+            "details": "Sedan 323i, 2.5 Petrol 170 HP, 4d, Manual 5speed",
+            "auctionTitle": "Alphabet Long Term Rental",
+            "countryCode": "DK",
+            "formattedMileage": "288,000 km",
+            "formattedEndtime": "24 sec",
+            "formattedLocation": "Midt- & Sydsjælland (150km)",
+            "formattedCurrentPrice": "EUR 3,613"
+        },
+        {
+            "enrollId": 125649,
+            "headline": "2016 BMW 3 TOURING",
+            "pictureUrl": "https://images.unsplash.com/photo-1550355291-bbee04a92027?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=872&q=80",
+            "details": "Station Wagon 318d Aut. Diesel 150 HP, 5d, Auto 8speed",
+            "auctionTitle": "Alphabet Long Term Rental",
+            "countryCode": "DE",
+            "formattedMileage": "88,492 km",
+            "formattedEndtime": "3+ min",
+            "formattedLocation": "Nordrhein-Westfalen (550km)",
+            "formattedCurrentPrice": "EUR 13,650"
+        },
+        {
+            "enrollId": 156461,
+            "headline": "2017 Mercedes-Benz Vito Panel Van",
+            "pictureUrl": "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1966&q=80",
+            "details": "Complete, 119 CDI BlueTEC Diesel 190 HP, Long H1 5d, 7G Tronic Plus 7speed, RWD",
+            "auctionTitle": "Alphabet Long Term Rental",
+            "countryCode": "DK",
+            "formattedMileage": "111,312 km",
+            "formattedEndtime": "33 hrs 28 sec",
+            "formattedLocation": "Østjylland (100km)",
+            "formattedCurrentPrice": "EUR 13,650"
+        },
+        {
+            "enrollId": 654321,
+            "headline": "2015 BMW X3",
+            "pictureUrl": "https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80",
+            "details": "xDrive20d, Diésel 190 cv, 5puertas",
+            "auctionTitle": "Alphabet Long Term Rental",
+            "countryCode": "ES",
+            "formattedMileage": "116.173 km",
+            "formattedEndtime": "2 days",
+            "formattedLocation": "Tarragona (1.750km)",
+            "formattedCurrentBuyNowPrice": "EUR 16,200",
+            "formattedCurrentPrice": "EUR 3,613"
+        },
+        {
+            "enrollId": 563453,
+            "headline": "2019 Fiat Doblo",
+            "pictureUrl": "https://images.unsplash.com/photo-1541443131876-44b03de101c5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80",
+            "details": "GNC Lounge, 1.4 Benzin 120 PS",
+            "auctionTitle": "Alphabet Long Term Rental",
+            "countryCode": "ES",
+            "formattedMileage": "14,756 km",
+            "formattedEndtime": "3 days",
+            "formattedLocation": "Barcelona (1.700km)",
+            "formattedCurrentPrice": "EUR 5,750"
+        },
+        {
+            "enrollId": 564453,
+            "headline": "2019 Fiat Doblo",
+            "pictureUrl": null,
+            "details": "GNC Lounge, 1.4 Benzin 120 PS",
+            "auctionTitle": "Alphabet Long Term Rental",
+            "countryCode": "ES",
+            "formattedMileage": "14,756 km",
+            "formattedEndtime": "3 days",
+            "formattedLocation": "Barcelona (1.700km)",
+            "formattedCurrentPrice": "EUR 5,750"
+        },
+        {
+            "enrollId": 494457,
+            "headline": "2019 Fiat Doblo",
+            "pictureUrl": "",
+            "details": "GNC Lounge, 1.4 Benzin 120 PS",
+            "auctionTitle": "Alphabet Long Term Rental",
+            "countryCode": "ES",
+            "formattedMileage": "14,756 km",
+            "formattedEndtime": "3 days",
+            "formattedLocation": "Barcelona (1.700km)",
+            "formattedCurrentPrice": "EUR 5,750"
+        },
+        {
+            "enrollId": 456273,
+            "headline": "2014 Jeep Grand Cherokee",
+            "pictureUrl": "https://images.unsplash.com/photo-1504215680853-026ed2a45def?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80",
+            "details": "1.3 V6 Overland Auto, Diesel, 250 CV",
+            "auctionTitle": "Alphabet Long Term Rental",
+            "countryCode": "IT",
+            "formattedMileage": "14,756 km",
+            "formattedEndtime": "3 days",
+            "formattedLocation": "Lombardia (1.150km)",
+            "formattedCurrentPrice": "EUR 7,619",
+            "additionalArticles": [
+                "2018 Mercedes-Benz Vito Minivan TOURER BATALLA LARGA",
+                "2016 Renault Scenic GRAND BOSE EDITION",
+                "2017 Opel Corsa COSMO"
+            ]
+        }
+    ]
+}

@@ -6,12 +6,7 @@ import 'package:autorola_assignment/router/router.gr.dart';
 class AppRouter extends $AppRouter {
   AppRouter({required AuthGuard authGuard}) : super() {
     routes.addAll([
-      AutoRoute(page: FlutterSplashRoute.page, initial: true),
-      AutoRoute(page: RootRoute.page, children: [
-        AutoRoute(page: NestedRoute1.page),
-        AutoRoute(page: NestedRoute2.page),
-        AutoRoute(page: NestedRoute3.page),
-      ]),
+      AutoRoute(page: HomeRoute.page, initial: true, path: '/home'),
     ]);
   }
 

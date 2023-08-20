@@ -1,0 +1,36 @@
+{
+  "data": [
+    {
+      "key": "",
+      "value": "Any make"
+    },
+    {
+      "key": "Audi",
+      "value": "Audi"
+    },
+    {
+      "key": "BMW",
+      "value": "BMW"
+    },
+    {
+      "key": "Citroën",
+      "value": "Citroën"
+    },
+    {
+      "key": "Fiat",
+      "value": "Fiat"
+    },
+    {
+      "key": "Ford",
+      "value": "Ford"
+    },
+    {
+      "key": "Peugeot",
+      "value": "Peugeot"
+    },
+    {
+      "key": "VW",
+      "value": "VW"
+    }
+  ]
+}

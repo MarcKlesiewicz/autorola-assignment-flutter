@@ -1,0 +1,62 @@
+{
+    "domesticAuctions": [
+        {
+            "id": 456985,
+            "countryCode": "DE",
+            "timeFormatted": "08/26/20 06:00",
+            "logo": "https://g.autorola.com/g/da_DK/misc/logo_autorola_24h.gif",
+            "title": "Alphabet - Ex-leasing vehicles",
+            "numberOfCars": "77"
+        },
+        {
+            "id": 457659,
+            "countryCode": "DE",
+            "timeFormatted": "08/26/20 06:00",
+            "logo": "",
+            "title": "LeasePlan - Ex-leasing vehicles",
+            "numberOfCars": "38"
+        }
+    ],
+    "internationalAuctions": [
+        {
+            "id": 458248,
+            "countryCode": "PT",
+            "timeFormatted": "08/26/20 06:00",
+            "logo": "https://g.autorola.com/g/da_DK/misc/logo_autorola_24h.gif",
+            "title": "Retomas Grupo Salvador Caetano",
+            "numberOfCars": "87"
+        },
+        {
+            "id": 458227,
+            "countryCode": "PT",
+            "timeFormatted": "08/26/20 06:00",
+            "logo": null,
+            "title": "Finlog - Especial Gestão de Frotas",
+            "numberOfCars": "34"
+        },
+        {
+            "id": 458440,
+            "countryCode": "NL",
+            "timeFormatted": "08/26/20 06:00",
+            "logo": "https://g.autorola.com/g/da_DK/misc/logo_autorola_24h.gif",
+            "title": "NL Fleet and Lease Veiling - CLOSED BIDS",
+            "numberOfCars": "39"
+        },
+        {
+            "id": 458174,
+            "countryCode": "ES",
+            "timeFormatted": "08/27/20 03:30",
+            "logo": "https://g.autorola.com/g/da_DK/misc/logo_autorola_24h.gif",
+            "title": "Todo tipo de stock: Renting, Rent a car, empresa, fabricantes y concesionarios",
+            "numberOfCars": "12"
+        },
+        {
+            "id": 458094,
+            "countryCode": "FR",
+            "timeFormatted": "08/27/20 02:00",
+            "logo": "",
+            "title": "Enchère - Location Courte Durée – FR - Volkswagen Group",
+            "numberOfCars": "25"
+        }
+    ]
+}

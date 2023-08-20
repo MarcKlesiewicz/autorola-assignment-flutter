@@ -1,0 +1,28 @@
+{
+  "data": [
+    {
+      "key": "",
+      "value": "Any country"
+    },
+    {
+      "key": "AT",
+      "value": "Austria"
+    },
+    {
+      "key": "BE",
+      "value": "Belgium"
+    },
+    {
+      "key": "DK",
+      "value": "Denmark"
+    },
+    {
+      "key": "DE",
+      "value": "Germany"
+    },
+    {
+      "key": "MX",
+      "value": "Mexico"
+    }
+  ]
+}

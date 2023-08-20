@@ -1,0 +1,32 @@
+{
+  "data": [
+    {
+      "key": "",
+      "value": "Any fuel type"
+    },
+    {
+      "key": "1",
+      "value": "Petrol"
+    },
+    {
+      "key": "2",
+      "value": "Diesel"
+    },
+    {
+      "key": "3",
+      "value": "Electric"
+    },
+    {
+      "key": "4",
+      "value": "Hybrid"
+    },
+    {
+      "key": "5",
+      "value": "Gas"
+    },
+    {
+      "key": "99",
+      "value": "No fuel"
+    }
+  ]
+}
