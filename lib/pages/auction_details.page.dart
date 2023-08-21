@@ -1,14 +1,13 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:autorola_assignment/models/articlesmodel.dart';
-import 'package:autorola_assignment/models/auctionmodel.dart';
 import 'package:autorola_assignment/providers/auctions_provider.dart';
-import 'package:autorola_assignment/providers/home_action_provider.dart';
+import 'package:autorola_assignment/utils/list_extensions.dart';
 import 'package:autorola_assignment/utils/utils.dart';
 import 'package:autorola_assignment/widgets/common/default_scaffold.dart';
+import 'package:autorola_assignment/widgets/dialogs/show_default_dialog.dart';
 import 'package:autorola_assignment/widgets/text/styled_text.dart';
 import 'package:autorola_assignment/widgets/text/text_settings.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 @RoutePage()
@@ -35,7 +34,27 @@ class AuctionDetailsPage extends StatelessWidget {
           Gaps.mdV,
           const TitleLarge('auction.title,'),
           Gaps.lgV,
-          const SizedBox(width: 992, child: Divider()),
+          SizedBox(
+              width: 992,
+              child: Column(
+                children: [
+                  Align(
+                    alignment: Alignment.topRight,
+                    child: Container(
+                      decoration: BoxDecoration(
+                        color: Colors.grey.withOpacity(0.2),
+                        borderRadius: BorderRadiuses.r01,
+                      ),
+                      child: IconButton.filled(
+                        onPressed: () => showNotImplementedSnackBar(context),
+                        icon: const Icon(Icons.grid_view_sharp),
+                        splashRadius: 1,
+                      ),
+                    ),
+                  ),
+                  const Divider(),
+                ],
+              )),
           const _ArticelsSection(),
         ],
       ),
@@ -89,15 +108,77 @@ class _ArticleCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      child: Padding(
-        padding: Insets.a02,
-        child: Row(
-          children: [
-            _ArticleImage(
-              pictureUrl: article.pictureUrl,
-            )
-          ],
+    return MouseRegion(
+      cursor: SystemMouseCursors.click,
+      child: GestureDetector(
+        onTap: () => showNotImplementedSnackBar(context),
+        child: Card(
+          child: Padding(
+            padding: Insets.a02,
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                _ArticleImage(
+                  pictureUrl: article.pictureUrl,
+                ),
+                SizedBox(
+                  width: 200,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      TitleMedium(
+                        article.headline,
+                        settings: TextSettings(
+                          color: Colors.lightBlue,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                      TitleSmall.secondary(
+                        article.details,
+                        settings: TextSettings(
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
+                        ),
+                      ),
+                      TitleSmall.secondary(article.formattedMileage),
+                    ].gap(Gaps.smV),
+                  ),
+                ),
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Image.asset('assets/flags/${article.countryCode}.gif'),
+                    Gaps.xsH,
+                    TitleSmall.secondary(
+                        '${article.formattedLocation.split('(').first} \n ${article.formattedLocation.split(' ').last} ')
+                  ],
+                ),
+                TitleSmall.secondary(article.auctionTitle),
+                Row(
+                  children: [
+                    const Icon(
+                      Icons.timer_rounded,
+                      size: 20,
+                    ),
+                    Gaps.xsH,
+                    TitleMedium.secondary(article.formattedEndtime),
+                  ],
+                ),
+                Row(
+                  children: [
+                    const Icon(
+                      Icons.gavel_sharp,
+                      size: 20,
+                    ),
+                    Gaps.xsH,
+                    TitleSmall.secondary(article.formattedCurrentPrice),
+                  ],
+                ),
+              ].gap(Gaps.mdH),
+            ),
+          ),
         ),
       ),
     );
