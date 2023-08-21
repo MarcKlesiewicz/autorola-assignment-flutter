@@ -7,6 +7,7 @@ class AppRouter extends $AppRouter {
   AppRouter({required AuthGuard authGuard}) : super() {
     routes.addAll([
       AutoRoute(page: HomeRoute.page, initial: true, path: '/home'),
+      AutoRoute(page: AuctionsRoute.page, path: '/auction'),
     ]);
   }
 

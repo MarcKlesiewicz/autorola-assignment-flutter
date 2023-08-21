@@ -1,5 +1,8 @@
+import 'package:auto_route/auto_route.dart';
+import 'package:autorola_assignment/router/router.gr.dart';
 import 'package:autorola_assignment/utils/list_extensions.dart';
 import 'package:autorola_assignment/utils/utils.dart';
+import 'package:autorola_assignment/widgets/dialogs/show_default_dialog.dart';
 import 'package:autorola_assignment/widgets/text/styled_text.dart';
 import 'package:autorola_assignment/widgets/text/text_settings.dart';
 import 'package:flutter/material.dart';
@@ -66,7 +69,10 @@ class _Appbar extends StatelessWidget {
                       'assets/images/logo_responsive_autorola.png')),
               Gaps.lgH,
               TextButton(onPressed: () {}, child: const Text('Vehicles')),
-              TextButton(onPressed: () {}, child: const Text('Auctions'))
+              TextButton(
+                  onPressed: () =>
+                      context.router.navigate(const AuctionsRoute()),
+                  child: const Text('Auctions'))
             ],
           ),
         ),
@@ -96,8 +102,12 @@ class _Footer extends StatelessWidget {
             const VerticalDivider(
               color: Colors.black,
             ),
-            TextButton(onPressed: () {}, child: const Text('Datenschutz ')),
-            TextButton(onPressed: () {}, child: const Text('Impressum')),
+            TextButton(
+                onPressed: () => showNotImplementedSnackBar(context),
+                child: const Text('Datenschutz ')),
+            TextButton(
+                onPressed: () => showNotImplementedSnackBar(context),
+                child: const Text('Impressum')),
           ],
         ),
         Container(

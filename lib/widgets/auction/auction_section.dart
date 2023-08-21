@@ -7,8 +7,8 @@ import 'package:autorola_assignment/widgets/text/text_settings.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class HomeAuctionSection extends ConsumerWidget {
-  const HomeAuctionSection({Key? key}) : super(key: key);
+class AuctionSection extends ConsumerWidget {
+  const AuctionSection({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
