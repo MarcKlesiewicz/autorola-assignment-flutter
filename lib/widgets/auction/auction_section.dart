@@ -1,5 +1,8 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:autorola_assignment/models/auctionmodel.dart';
+import 'package:autorola_assignment/pages/auction_details.page.dart';
 import 'package:autorola_assignment/providers/home_action_provider.dart';
+import 'package:autorola_assignment/router/router.gr.dart';
 import 'package:autorola_assignment/utils/list_extensions.dart';
 import 'package:autorola_assignment/utils/utils.dart';
 import 'package:autorola_assignment/widgets/text/styled_text.dart';
@@ -112,7 +115,7 @@ class _AuctionCard extends StatelessWidget {
     return MouseRegion(
       cursor: SystemMouseCursors.click,
       child: GestureDetector(
-        onTap: () {},
+        onTap: () => context.router.navigate(const AuctionDetailsRoute()),
         child: Card(
           child: Padding(
             padding: Insets.a05,

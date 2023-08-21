@@ -1,5 +1,4 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:autorola_assignment/pages/vehicels.page.dart';
 import 'package:autorola_assignment/router/guards.dart';
 import 'package:autorola_assignment/router/router.gr.dart';
 
@@ -11,14 +10,19 @@ class AppRouter extends $AppRouter {
         transitionsBuilder: TransitionsBuilders.fadeIn,
         durationInMilliseconds: 400,
         page: HomeRoute.page,
-        initial: true,
         path: '/home',
       ),
       CustomRoute(
         transitionsBuilder: TransitionsBuilders.fadeIn,
         durationInMilliseconds: 400,
         page: AuctionsRoute.page,
-        path: '/auction',
+        path: '/auctions',
+      ),
+      CustomRoute(
+        initial: true,
+        transitionsBuilder: TransitionsBuilders.fadeIn,
+        durationInMilliseconds: 400,
+        page: AuctionDetailsRoute.page,
       ),
       CustomRoute(
         transitionsBuilder: TransitionsBuilders.fadeIn,
