@@ -6,8 +6,19 @@ import 'package:autorola_assignment/router/router.gr.dart';
 class AppRouter extends $AppRouter {
   AppRouter({required AuthGuard authGuard}) : super() {
     routes.addAll([
-      AutoRoute(page: HomeRoute.page, initial: true, path: '/home'),
-      AutoRoute(page: AuctionsRoute.page, path: '/auction'),
+      CustomRoute(
+        transitionsBuilder: TransitionsBuilders.fadeIn,
+        durationInMilliseconds: 400,
+        page: HomeRoute.page,
+        initial: true,
+        path: '/home',
+      ),
+      CustomRoute(
+        transitionsBuilder: TransitionsBuilders.fadeIn,
+        durationInMilliseconds: 400,
+        page: AuctionsRoute.page,
+        path: '/auction',
+      ),
     ]);
   }
 

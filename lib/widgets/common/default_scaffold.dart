@@ -1,4 +1,5 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:autorola_assignment/api/home/home_service.dart';
 import 'package:autorola_assignment/router/router.gr.dart';
 import 'package:autorola_assignment/utils/list_extensions.dart';
 import 'package:autorola_assignment/utils/utils.dart';
@@ -60,15 +61,23 @@ class _Appbar extends StatelessWidget {
           constraints: const BoxConstraints(minHeight: 50, maxWidth: 992),
           child: Row(
             children: [
-              ConstrainedBox(
-                  constraints: const BoxConstraints(
-                    maxWidth: 184,
-                    maxHeight: 40,
-                  ),
-                  child: Image.asset(
-                      'assets/images/logo_responsive_autorola.png')),
+              MouseRegion(
+                cursor: SystemMouseCursors.click,
+                child: GestureDetector(
+                  onTap: () => context.router.push(const HomeRoute()),
+                  child: ConstrainedBox(
+                      constraints: const BoxConstraints(
+                        maxWidth: 184,
+                        maxHeight: 40,
+                      ),
+                      child: Image.asset(
+                          'assets/images/logo_responsive_autorola.png')),
+                ),
+              ),
               Gaps.lgH,
-              TextButton(onPressed: () {}, child: const Text('Vehicles')),
+              TextButton(
+                  onPressed: () => showNotImplementedSnackBar(context),
+                  child: const Text('Vehicles')),
               TextButton(
                   onPressed: () =>
                       context.router.navigate(const AuctionsRoute()),
