@@ -1,8 +1,11 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:autorola_assignment/models/articlesmodel.dart';
+import 'package:autorola_assignment/pages/vehicels.page.dart';
 import 'package:autorola_assignment/providers/auctions_provider.dart';
 import 'package:autorola_assignment/providers/countries_provider.dart';
 import 'package:autorola_assignment/providers/fueltype_provider.dart';
 import 'package:autorola_assignment/providers/make_provider.dart';
+import 'package:autorola_assignment/router/router.gr.dart';
 import 'package:autorola_assignment/utils/country.dart';
 import 'package:autorola_assignment/utils/list_extensions.dart';
 import 'package:autorola_assignment/utils/utils.dart';
@@ -106,7 +109,7 @@ class _QuickSearchFilterState extends ConsumerState<QuickSearchFilter> {
                       Directionality(
                         textDirection: TextDirection.rtl,
                         child: ElevatedButton.icon(
-                          onPressed: () {},
+                          onPressed: () => _onSubmitted(),
                           icon: const Icon(Icons.drive_eta),
                           label: TitleLarge.onPrimary(
                               'Show ${_getSubmitButtonText(data!.length.toString())}'),
@@ -126,6 +129,19 @@ class _QuickSearchFilterState extends ConsumerState<QuickSearchFilter> {
       orElse: () {
         return const SizedBox();
       },
+    );
+  }
+
+  _onSubmitted() {
+    context.router.navigate(
+      VehiclesRoute(
+        makes:
+            'makes=${selectedMakes.isNotEmpty ? selectedMakes.join(',') : 'any'},',
+        fuelTypes:
+            'fuelTypes=${selectedFueltypes.isNotEmpty ? selectedFueltypes.join(',') : 'any'},',
+        countries:
+            'countries=${selectedCountries.isNotEmpty ? selectedCountries.join(',') : 'any'}',
+      ),
     );
   }
 
